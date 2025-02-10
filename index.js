@@ -418,7 +418,7 @@ var lengthData=data.length;
 console.log(lengthData)
 
 /*default row number*/
-var rowNumber=values[0];
+var rowNumber=lengthData;
 var theFilter="";
 var newestData="";
 var sortedData="";
@@ -445,6 +445,13 @@ function handleClick(event){
     console.log(rowNumber);
 
     document.querySelector('table').innerHTML=tableRender(data,fields);
+    document.querySelectorAll(".editActionButton").forEach(function(editable){
+        editable.addEventListener("click",isEditing);
+    })
+    
+    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
+        deleteable.addEventListener("click",deleteRow);
+    })
 
     document.querySelector('.pageIcons').innerHTML= dynamicButtons(rowNumber);
     document.querySelectorAll(".pagingButton").forEach(function(buttonPage){
@@ -470,6 +477,13 @@ function handleInput(event) {
     lengthData=newData.length;
     /*This updates the code for search bar*/
     document.querySelector('table').innerHTML = tableRender(newData, fields);
+    document.querySelectorAll(".editActionButton").forEach(function(editable){
+        editable.addEventListener("click",isEditing);
+    })
+    
+    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
+        deleteable.addEventListener("click",deleteRow);
+    })
     /*This updates number of buttons*/
     document.querySelector('.pageIcons').innerHTML = dynamicButtons(rowNumber);
     document.querySelectorAll(".pagingButton").forEach(function(buttonPage){
@@ -487,11 +501,12 @@ function tableRender(data,fields){
                         return `
                             <th>${fieldMember}
                             <div class=headButton>
-                            <button class="headingButton" onclick="sortStringAsc('${fieldMember}')" >
-                            <img src="https://th.bing.com/th?id=OIP.pDmgA1bsIubxvKMWINXJpgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"width="5px" height="5px">
-                            </button>
-                            <button class="headingButton" onclick="sortStringDsc('${fieldMember}')">
-                            <img src="https://th.bing.com/th?id=OIP.aEEk21LpU4JhD3fMOdAEvAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" width="5px" height="5px"></button>
+                                <button class="headingButton" onclick="sortStringAsc('${fieldMember}')" >
+                                    <img src="https://th.bing.com/th?id=OIP.pDmgA1bsIubxvKMWINXJpgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"width="5px" height="5px">
+                                </button>
+                                <button class="headingButton" onclick="sortStringDsc('${fieldMember}')">
+                                    <img src="https://th.bing.com/th?id=OIP.aEEk21LpU4JhD3fMOdAEvAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" width="5px" height="5px">
+                                </button>
                             </div>
                             </th>
                         `
@@ -512,7 +527,7 @@ function tableRender(data,fields){
                                 <td>${dataMember.HitPoint}</td>
                                 <td>${dataMember.PhysicalAttack}</td>
                                 <td>${dataMember.Mana}</td>
-                                <td  contenteditable="false"><button class="editActionButton">Edit</button> <button class="deleteActionButton" onClick="deleteButton()">Delete</button></td>
+                                <td contenteditable="false"><button class="editActionButton">Edit</button> <button class="deleteActionButton">Delete</button></td>
                             </tr>
                     `
                     }
@@ -583,6 +598,13 @@ function sortStringAsc(param){
         });   
     }
     document.querySelector('table').innerHTML=tableRender(sortedData,fields);
+    document.querySelectorAll(".editActionButton").forEach(function(editable){
+        editable.addEventListener("click",isEditing);
+    })
+    
+    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
+        deleteable.addEventListener("click",deleteRow);
+    })
 }
 function sortStringDsc(param){
     console.log(param);
@@ -617,16 +639,134 @@ function sortStringDsc(param){
         });   
     }
     document.querySelector('table').innerHTML=tableRender(sortedData,fields);
+    document.querySelectorAll(".editActionButton").forEach(function(editable){
+        editable.addEventListener("click",isEditing);
+    })
+    
+    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
+        deleteable.addEventListener("click",deleteRow);
+    })
 }
 
+/*function for saving a row */
+/* function editNewRow(event){
+    var currentRow=event.target.closest('tr');
+    var newObj={};
+    currentRow.querySelectorAll('td').forEach(function(eachCell,index){
+        if(index<fields.length){
+            if(eachCell.textContent.length==0){
+                alert("Row must not be empty");
+                return;
+            }
+            newObj[fields[index]]=eachCell.textContent;
+        }
+        console.log(eachCell.textContent);
+    })
+    document.querySelector(".editActionButton").textContent="Edit";
+    data.push(newObj);
+} */
+
 /*function for adding row*/
+/* function addingRow(){
+    var newRow = document.createElement("tr");
+    fields.forEach(function(field){
+        var newCell = document.createElement("td");
+        newCell.setAttribute("contenteditable","true");
+        newRow.appendChild(newCell);
+    });
+    var actionCell = document.createElement("td");
+    actionCell.innerHTML = `
+    <button class="editActionButton">Save</button>
+    <button class="deleteActionButton" onclick="deleteButton()">Delete</button>
+    `;
+    console.log(newRow);
+    newRow.appendChild(actionCell);
+    document.querySelector("table tbody").appendChild(newRow);
+    document.querySelector(".editActionButton").addEventListener("click",editNewRow);
+} */
 function addingRow(){
-    document.querySelector("#addRow").style.display="grid";
+    var newObject={
+        name:"",
+        role:"",
+        type:"",
+        HitPoint: 0,
+        PhysicalAttack: 0,
+        Mana: 0
+    }
+    data.unshift(newObject);
+    document.querySelector('table').innerHTML=tableRender(data,fields);
+    document.querySelectorAll(".editActionButton").forEach(function(editable){
+        editable.addEventListener("click",isEditing);
+    })
+    
+    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
+        deleteable.addEventListener("click",deleteRow);
+    })
 }
 
 /*function for editing row*/
-function isEditing(){
-    document.querySelector(".editing").setAttribute("contenteditable", "true");
+function isEditing(event){
+    var oldRow=event.target.closest('tr');
+    if(oldRow.querySelector(".editActionButton").textContent=="Edit"){
+        var oldCells=oldRow.querySelectorAll("td");
+        oldCells.forEach(function(cell,index){
+            if(index<6){
+                cell.setAttribute("contenteditable","true");
+            }
+        })
+        oldRow.querySelector(".editActionButton").textContent="Save";
+    }
+    else if(oldRow.querySelector(".editActionButton").textContent=="Save"){
+        var oldCells=oldRow.querySelectorAll("td");
+        var name=oldRow.querySelector('td:first-of-type').textContent;
+        var rowIndex=data.findIndex(function(indexing){
+            return indexing.name==name;
+        })
+        var editedRow={
+            name:oldCells[0].textContent,
+            role:oldCells[1].textContent,
+            type:oldCells[2].textContent,
+            HitPoint:oldCells[3].textContent,
+            PhysicalAttack:oldCells[4].textContent,
+            Mana:oldCells[5].textContent
+        };
+        data[rowIndex]=editedRow;
+        oldCells.forEach(function(cell,index){
+            if(index<6){
+                cell.setAttribute("contenteditable","false");
+            }
+        })
+        oldRow.querySelector(".editActionButton").textContent="Edit";
+        document.querySelector('table').innerHTML=tableRender(data,fields);
+
+        document.querySelectorAll(".editActionButton").forEach(function(editable){
+            editable.addEventListener("click",isEditing);
+        })
+        
+        document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
+            deleteable.addEventListener("click",deleteRow);
+        })
+    }
+   
+    /* document.querySelector(".editing").setAttribute("contenteditable", "true"); */
+}
+
+/*function for deleting row*/
+function deleteRow(event){
+    var oldRow=event.target.closest('tr');
+    var name=oldRow.querySelector('td:first-of-type').textContent;
+    var rowIndex=data.findIndex(function(indexing){
+        return indexing.name==name;
+    })
+    data.splice(rowIndex,1);
+    document.querySelector('table').innerHTML=tableRender(data,fields);
+    document.querySelectorAll(".editActionButton").forEach(function(editable){
+        editable.addEventListener("click",isEditing);
+    })
+    
+    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
+        deleteable.addEventListener("click",deleteRow);
+    })
 }
 
 /*Adding events to buttons and input according to id*/
@@ -638,10 +778,15 @@ document.querySelectorAll(".pagingButton").forEach(function(buttonPage){
     buttonPage.addEventListener("click",pagingButton);
 })
 
-document.querySelector("#addRowButton").addEventListener("click",addingRow);
+document.querySelector(".addButton").addEventListener("click",addingRow);
 
+/*Whenever the table is rendered these two functions must be called to attach these two events to the new edit and delete buttons */
 document.querySelectorAll(".editActionButton").forEach(function(editable){
     editable.addEventListener("click",isEditing);
+})
+
+document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
+    deleteable.addEventListener("click",deleteRow);
 })
 /*
 function createDropdown() {
