@@ -1,45 +1,42 @@
-Dynamic Table
-This repository contains a web application that implements a dynamic table with various interactive features, built using HTML, CSS, and JavaScript. The project is designed to provide users with a functional, user-friendly table where they can add, edit, delete, sort, and search for data. It also includes pagination to manage the visibility of table entries.
+# Dynamic Table – Data Management App 📊
 
-Features
-Add New Row: Users can dynamically add new rows to the table with custom data.
+This project is a **dynamic, responsive table management app** built using **HTML**, **CSS**, **JavaScript**, and **Git**. It allows users to **create, edit, delete, search, sort**, and **paginate** table entries. Everything is handled on the client side without external libraries, showcasing pure JavaScript capabilities and clean UI design.
 
-Edit Existing Content: Any cell in the table can be edited for quick modifications.
+---
 
-Sorting: Columns can be sorted in ascending or descending order by clicking on the column headers.
+## 🚀 Features
 
-Search: A search bar allows users to filter entries in the table.
+- ✅ **Add New Rows** to the table via form input
+- ✅ **Edit Existing Rows** with in-place update capability
+- ✅ **Delete Records** with a single click
+- ✅ **Search Functionality** across the table fields
+- ✅ **Sort Columns** (ascending/descending toggle)
+- ✅ **Pagination** support:
+  - View all entries or paginate with 10, 15, or 25 rows
+- ✅ **Responsive Layout** for all devices
+- ✅ Smooth and user-friendly UI
 
-Delete Row: Users can remove rows from the table.
+---
 
-Pagination: Entries are paginated with the option to display 10, 15, or 25 rows per page.
+## 🛠️ Tech Stack
 
-Tech Stack
-HTML: Basic structure and markup.
+- **HTML** – Structured, semantic layout  
+- **CSS** – Styling and responsiveness  
+- **JavaScript (Vanilla)** – Core logic for dynamic updates  
+- **Git** – Version control and code management
 
-CSS: Styling and layout.
+---
 
-JavaScript: Dynamic functionality for adding, editing, deleting, sorting, searching, and paginating entries.
+## 🚀 Installation
 
-Git: Version control for managing the codebase.
+1. Clone the repository:
+   https://github.com/YashRajput74/Dynamic_Table
 
-Installation
-Clone the repository:
+2. Navigate to the project directory:
+   cd Dynamic_Table
 
-bash
-Copy
-Edit
-git clone https://github.com/YashRajput74/Dynamic_Table.git
-Navigate to the project directory:
+3. Open index.html in your browser to explore the app locally.
 
-bash
-Copy
-Edit
-cd Dynamic_Table
-Open the index.html file in your browser to explore or interact with the table.
 
-Demo
-Live Demo Link: https://67c84ea5a3d9900008ae6e7a--tabledynamic.netlify.app/
-
-Contributing
-If you'd like to contribute to this project, feel free to fork the repository, create issues, or submit pull requests with bug fixes or new features.
+## 📸 Live Demo: 
+🔗 [Live Site](https://6879e012f700fa00084b513a--tabledynamic.netlify.app/)
