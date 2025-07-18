@@ -43,6 +43,7 @@ main{
 .header>div:nth-child(3){
     color: #4898CF;
     border-left: 2px solid lightgray;
+    text-align: center;
 }
 .hero{
     color: #023368;
@@ -76,6 +77,9 @@ h1{
     align-items: center;
     font-size: 1.5rem;
     border-radius: 2vh;
+}
+.addButton:hover{
+    cursor: pointer;
 }
 .optionDivs>div:nth-child(1){
     background-color: #003366;
@@ -117,13 +121,6 @@ h1{
     font-size: 1.5rem;
     position: relative;
 }
-.headingButton{
-    width: 2vw;
-    height: 4vh;
-    border: none;
-    color: #003366;
-    margin-left: 0.5vw;
-}
 .pagingButton{
     width: 2vw;
     height: 4vh;
@@ -150,16 +147,50 @@ td,th{
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     text-align: center;
-    vertical-align: middle; 
+    vertical-align: middle;
     height: 5vh;
 }
-.pageIcons{
+.headButton{
+    padding-left: 2vh;
+    display: flex;
+    justify-content: center;
+}
+.headButton>div{
+    display: flex;
+    flex-direction: column;
+}
+.headingButton{
+    width: 1vw;
+    height: 2vh;
+    border: 1px solid lightgray;
+    margin-left: 2vh;
+    color: #003366;
+}
+.headButton>div>button:nth-child(1)>img{
+    height: 50%;
+}
+.headingButton>img{
+    margin-bottom: 0.5vh;
+}
+.headingButton:hover{
+    cursor: pointer;
+}
+.tableBottom{
     width: 90%;
     height: 5vh;
     margin: auto;
-    font-weight: bold;
     margin-top: 5vh;
     margin-bottom: 5vh;
+    display: flex;
+}
+.tableBottom>div:nth-child(1){
+    width: 30%;
+    height: 5vh;
+}
+.pageIcons{
+    width: 70%;
+    height: 5vh;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,6 +198,8 @@ td,th{
 .pagingButton{
     background-color: white;
     font-weight: bold;
+    border-radius: 50%;
+    font-size: 1.2rem;
 }
 .editActionButton,.deleteActionButton,.saveActionButton{
     width: auto;
@@ -177,4 +210,90 @@ td,th{
     border-radius: 1vh;
     color: white;
     margin-left: 0.5vw;   
+}
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+.deletionModal{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 700px;
+    width: 100%;
+    height: 400px;
+}
+form{
+    height: 90%;
+}
+form>h2{
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 1.7rem;
+}
+form>div{
+    padding-left: 2vw;
+    margin-bottom: 3vh;
+}
+form>div>p{
+    margin-bottom: 1vh;
+}
+form>h3{
+    text-align: center;
+    margin-bottom: 1vh;
+    color: red;
+}
+form>label{
+    margin-left: 2vw;
+}
+form>input{
+    margin-left: 1vw;
+    padding: 0.5vh;
+    font-size: 1.5rem;
+}
+form>h4{
+    text-align: center;
+    margin: 2vh;
+}
+.deletionModal>button{
+    float: right;
+    width: 15vh;
+    height: 6vh;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+@media (min-width:767px) and (max-width: 1204px) {
+    body{
+        padding-left: 0vw;
+        padding-right: 0vw;
+    }
+    main{
+        width: 100%;
+    }
+}
+@media (max-width: 766px) {
+    body{
+        padding-left: 0vw;
+        padding-right: 0vw;
+    }
+    main{
+        width: 180%;
+    }
 }

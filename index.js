@@ -1,469 +1,57 @@
-/*Dynamic Data*/
-var fields=["Name","Role","Type","Hitpoints","Physical Attack","Mana"];
-var data=[
-    {
-        name:"Lukas",
-        role:"Fighter",
-        type:"Regen/Damage",
-        HitPoint: 2550,
-        PhysicalAttack: 119,
-        Mana: 0
-    },
-    {
-        name:"Suyou",
-        role:"Assassian",
-        type:"Chase/Burst",
-        HitPoint:2390,
-        PhysicalAttack:124,
-        Mana: 0
-    },
-    {
-        name:"Zhuxin",
-        role:"Mage",
-        type:"Damage/Crowd Control",
-        HitPoint: 2280,
-        PhysicalAttack: 115,
-        Mana: 1300
-    },
-    {
-        name:"Chip",
-        role:"Tank",
-        type:"Support/Crowd Control",
-        HitPoint: 2481,
-        PhysicalAttack: 112,
-        Mana: 500
-    },
-    {
-        name:"Ixia",
-        role:"Marksman",
-        type:"Finisher/Damage",
-        HitPoint: 2320,
-        PhysicalAttack: 100,
-        Mana: 500
-    },
-    {
-        name:"Arlott",
-        role:"Fighter",
-        type:"Charge/Burst",
-        HitPoint: 2450,
-        PhysicalAttack: 120,
-        Mana: 0
-    },
-    {
-        name:"Joy",
-        role:"Assassian",
-        type:"Chase/Damage",
-        HitPoint: 2519,
-        PhysicalAttack: 119,
-        Mana: 0
-    },
-    {
-        name:"Ferdrinn",
-        role:"Tank",
-        type:"Damage/Chase",
-        HitPoint: 2600,
-        PhysicalAttack: 125,
-        Mana: 0
-    },
-    {
-        name:"Floryn",
-        role:"Support",
-        type:"Poke/Guard",
-        HitPoint: 2280,
-        PhysicalAttack: 119,
-        Mana: 500
-    },
-    {
-        name:"Edith",
-        role:"Tank",
-        type:"Control/Burst",
-        HitPoint: 2440,
-        PhysicalAttack: 110,
-        Mana: 0
-    },
-    {
-        name:"Valentina",
-        role:"Mage",
-        type:"Burst/Finisher",
-        HitPoint: 2580,
-        PhysicalAttack: 115,
-        Mana: 500
-    },
-    {
-        name:"Aulus",
-        role:"Fighter",
-        type:"Damage/Crowd Control",
-        HitPoint: 2580,
-        PhysicalAttack: 90,
-        Mana: 500
-    },
-    {
-        name:"Phoveus",
-        role:"Fighter",
-        type:"Regen/Damage",
-        HitPoint: 2650,
-        PhysicalAttack: 132,
-        Mana: 0
-    },
-    {
-        name:"Gloo",
-        role:"Tank",
-        type:"Regen/Control",
-        HitPoint: 2710,
-        PhysicalAttack:120 ,
-        Mana: 500
-    },
-    {
-        name:"Yve",
-        role:"Mage",
-        type:"Poke/Burst",
-        HitPoint: 2530,
-        PhysicalAttack: 115,
-        Mana: 500
-    },
-    {
-        name:"Brody",
-        role:"Marksman",
-        type:"Finisher/Burst",
-        HitPoint: 2290,
-        PhysicalAttack: 105,
-        Mana: 500
-    },
-    {
-        name:"Barats",
-        role:"Tank",
-        type:"Damage/Crowd Control",
-        HitPoint: 2450,
-        PhysicalAttack: 135,
-        Mana: 500
-    },
-    {
-        name:"Khaleed",
-        role:"Fighter",
-        type:"Damage/Regen",
-        HitPoint: 2600,
-        PhysicalAttack: 109,
-        Mana: 0
-    },
-    {
-        name:"Bendetta",
-        role:"Assassian",
-        type:"Chase/Burst",
-        HitPoint: 2410,
-        PhysicalAttack: 113,
-        Mana: 500
-    },    
-    {
-        name:"Luo Yi",
-        role:"Mage",
-        type:"Support/Crowd Control",
-        HitPoint: 2480,
-        PhysicalAttack: 107,
-        Mana: 500
-    },    
-    {
-        name:"Yu Zhong",
-        role:"Fighter",
-        type:"Regen/Damage",
-        HitPoint: 2520,
-        PhysicalAttack: 129,
-        Mana: 0
-    },
-    {
-        name:"Cecilion",
-        role:"Mage",
-        type:"Poke/Burst",
-        HitPoint: 2335,
-        PhysicalAttack: 105,
-        Mana: 700
-    },
-    {
-        name:"Lylia",
-        role:"Mage",
-        type:"Push/Damage",
-        HitPoint: 2380,
-        PhysicalAttack: 113,
-        Mana: 500
-    },
-    {
-        name:"Guinevere",
-        role:"Fighter",
-        type:"Burst/Magic Damage",
-        HitPoint: 2350,
-        PhysicalAttack: 126,
-        Mana: 0
-    },
-    {
-        name:"Khufra",
-        role:"Tank",
-        type:"Inititator/Crowd Control",
-        HitPoint: 2670,
-        PhysicalAttack: 117,
-        Mana: 500
-    },
-    {
-        name:"Badang",
-        role:"Fighter",
-        type:"Charge/Burst",
-        HitPoint: 2530,
-        PhysicalAttack: 111,
-        Mana: 0
-    },
-    {
-        name:"Faramis",
-        role:"Support",
-        type:"Guard/Charge",
-        HitPoint: 2422,
-        PhysicalAttack: 118,
-        Mana: 500
-    },
-    {
-        name:"Kadita",
-        role:"Mage",
-        type:"Burst/Charge",
-        HitPoint: 2370,
-        PhysicalAttack: 105,
-        Mana: 500
-    },
-    {
-        name:"Minsithar",
-        role:"Fighter",
-        type:"Initiator/Crowd Control",
-        HitPoint: 2520,
-        PhysicalAttack: 121,
-        Mana: 500
-    },
-    {
-        name:"Harith",
-        role:"Mage",
-        type:"Chase/Damage",
-        HitPoint: 2280,
-        PhysicalAttack: 114,
-        Mana: 500
-    },
-    {
-        name:"Thamuz",
-        role:"Fighter",
-        type:"Chase/Damage",
-        HitPoint: 2580,
-        PhysicalAttack: 107,
-        Mana: 0
-    },
-    {
-        name:"Hanzo",
-        role:"Assassian",
-        type:"Poke/Burst",
-        HitPoint: 2435,
-        PhysicalAttack: 108,
-        Mana: 0
-    },
-    {
-        name:"Lunox",
-        role:"Mage",
-        type:"Burst/Damage",
-        HitPoint: 2610,
-        PhysicalAttack: 115,
-        Mana: 500
-    },
-    {
-        name:"Leomard",
-        role:"Fighter",
-        type:"Chase/Burst",
-        HitPoint: 2560,
-        PhysicalAttack: 126,
-        Mana: 0
-    },
-    {
-        name:"Vale",
-        role:"Mage",
-        type:"Burst/Crowd Control",
-        HitPoint: 2280,
-        PhysicalAttack: 115,
-        Mana: 500
-    },
-    {
-        name:"Claude",
-        role:"Marksman",
-        type:"Burst/Chase",
-        HitPoint: 2250,
-        PhysicalAttack: 100,
-        Mana: 0
-    },
-    {
-        name:"Alduos",
-        role:"Fighter",
-        type:"Burst/Support",
-        HitPoint: 2490,
-        PhysicalAttack: 129,
-        Mana: 500
-    },
-    {
-        name:"Selena",
-        role:"Assassian",
-        type:"Initiator/Finisher",
-        HitPoint: 2280,
-        PhysicalAttack: 110,
-        Mana: 500
-    },
-    {
-        name:"Kaja",
-        role:"Support/Fighter",
-        type:"Control/ Charge",
-        HitPoint: 2431,
-        PhysicalAttack: 120,
-        Mana: 500
-    },
-    {
-        name:"Uranus",
-        role:"Tank",
-        type:"Regen",
-        HitPoint: 2380,
-        PhysicalAttack: 115,
-        Mana: 500
-    },
-    {
-        name:"Pharsa",
-        role:"Mage",
-        type:"Burst/Poke",
-        HitPoint: 2300,
-        PhysicalAttack: 109,
-        Mana: 500
-    },
-    {
-        name:"Lancelot",
-        role:"Assassian",
-        type:"Chase/Burst",
-        HitPoint: 2390,
-        PhysicalAttack: 124,
-        Mana: 500
-    },
-    {
-        name:"Argus",
-        role:"Fighter",
-        type:"Charge/Burst",
-        HitPoint: 2450,
-        PhysicalAttack: 111,
-        Mana: 0
-    },
-    {
-        name:"Grock",
-        role:"Tank",
-        type:"Crowd Control/Initiator",
-        HitPoint: 2710,
-        PhysicalAttack: 135,
-        Mana: 0
-    },
-    {
-        name:"Karrie",
-        role:"Marksman",
-        type:"Finisher/Damage",
-        HitPoint: 2278,
-        PhysicalAttack: 120,
-        Mana: 500
-    },
-    {
-        name:"Roger",
-        role:"Fighter",
-        type:"Finisher/Burst",
-        HitPoint: 2530,
-        PhysicalAttack: 128,
-        Mana: 500
-    },
-    {
-        name:"Aurora",
-        role:"Mage",
-        type:"Crowd Control/Poke",
-        HitPoint: 2380,
-        PhysicalAttack: 110,
-        Mana: 500
-    },
-    {
-        name:"Hilda",
-        role:"Fighter/Tank",
-        type:"Damage/Regen",
-        HitPoint: 2680,
-        PhysicalAttack: 123,
-        Mana: 0
-    },
-    {
-        name:"Johnson",
-        role:"Tank",
-        type:"Support/Crowd Control",
-        HitPoint: 2700,
-        PhysicalAttack: 120,
-        Mana: 0
-    },
-    {
-        name:"Moskov",
-        role:"Marksman",
-        type:"Finisher/Chase",
-        HitPoint: 2255,
-        PhysicalAttack: 125,
-        Mana: 500
-    },
-    {
-        name:"Yi Sun Shi",
-        role:"Marksman",
-        type:"Finisher/Chase",
-        HitPoint: 2570,
-        PhysicalAttack: 95,
-        Mana: 500
-    }
-
-];
-var values = [10, 15, 25];
-
 /*length of data set for buttons*/
-var lengthData=data.length;
-console.log(lengthData)
+var lengthData = data.length;
 
 /*default row number*/
-var rowNumber=lengthData;
-var theFilter="";
-var newestData="";
-var sortedData="";
+var rowNumber = lengthData;
+var pageNumber = 1;
+var theFilter = "";
+var newestData = "";
+var sortedData = "";
 
 /*creating a dropdown*/
 function createDropdown(values) {
-    return `<label for="dropdown"></label>
+    var tpl= `<label for="dropdown"></label>
             <select class="dropdown" id="dropdown" name="dropdown">
-            ${values.map(function(value){ 
-                return `
+            <option value="All">All</option>
+            ${values.map(function (value) {
+        return `
                 <option value="${value}">${value}</option>`
-            }).join('')}
+    }).join('')}
+                
             </select>`;
+    document.querySelector("#dropHere").innerHTML = tpl;
 }
-document.querySelector("#dropHere").innerHTML=createDropdown(values);
 
 /*Creating a dropdown for the sorter*/
 
 
 /*the 5,10,15 button's click events*/
-function handleClick(event){
-    console.log("click event");
-    rowNumber = event.target.value;
-    console.log(rowNumber);
-
-    document.querySelector('table').innerHTML=tableRender(data,fields);
-    document.querySelectorAll(".editActionButton").forEach(function(editable){
-        editable.addEventListener("click",isEditing);
+function handleClick(event) {
+    if(event.target.value=="All"){
+        rowNumber=data.length;
+    }
+    else{
+        rowNumber = event.target.value;
+    }
+    tableBodyRender(data);
+    dynamicButtons(rowNumber);
+    tagDynamic(pageNumber, rowNumber);
+    document.querySelectorAll(".pagingButton").forEach(function (buttonPage) {
+        buttonPage.addEventListener("click", pagingButton);
     })
-    
-    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
-        deleteable.addEventListener("click",deleteRow);
+    document.querySelectorAll(".editActionButton").forEach(function (editable) {
+        editable.addEventListener("click", isEditing);
     })
 
-    document.querySelector('.pageIcons').innerHTML= dynamicButtons(rowNumber);
-    document.querySelectorAll(".pagingButton").forEach(function(buttonPage){
-        buttonPage.addEventListener("click",pagingButton);
+    document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+        deleteable.addEventListener("click", modalFunction);
     })
 }
 
 /*This is the Search bar input*/
 function handleInput(event) {
-    console.log('input event executed');
-    theFilter=event.target.value.toLowerCase();
-    var newData=data.filter(function(item){
+    theFilter = event.target.value.toLowerCase();
+    var newData = data.filter(function (item) {
         return (
             item.name.toLowerCase().includes(`${theFilter}`) ||
             item.role.toLowerCase().includes(`${theFilter}`) ||
@@ -473,333 +61,395 @@ function handleInput(event) {
             String(item.Mana).includes(`${theFilter}`)
         )
     })
+    lengthData = newData.length;
 
-    lengthData=newData.length;
     /*This updates the code for search bar*/
-    document.querySelector('table').innerHTML = tableRender(newData, fields);
-    document.querySelectorAll(".editActionButton").forEach(function(editable){
-        editable.addEventListener("click",isEditing);
+    tableBodyRender(newData);
+    tagDynamic(pageNumber, rowNumber);
+    /*This updates number of buttons*/
+    dynamicButtons(rowNumber);
+    document.querySelectorAll(".editActionButton").forEach(function (editable) {
+        editable.addEventListener("click", isEditing);
+    })
+
+    document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+        deleteable.addEventListener("click", modalFunction);
     })
     
-    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
-        deleteable.addEventListener("click",deleteRow);
-    })
-    /*This updates number of buttons*/
-    document.querySelector('.pageIcons').innerHTML = dynamicButtons(rowNumber);
-    document.querySelectorAll(".pagingButton").forEach(function(buttonPage){
-        buttonPage.addEventListener("click",pagingButton);
+    document.querySelectorAll(".pagingButton").forEach(function (buttonPage) {
+        buttonPage.addEventListener("click", pagingButton);
     })
 }
 
-/*This  function is for table render*/
-function tableRender(data,fields){
-    return `
-        <thead>
+/*This  function is for table header render*/
+function tableHeaderRender(fields) {
+    var tpl= `
             <tr>
-                ${
-                    fields.map(function(fieldMember){
-                        return `
-                            <th>${fieldMember}
-                            <div class=headButton>
-                                <button class="headingButton" onclick="sortStringAsc('${fieldMember}')" >
-                                    <img src="https://th.bing.com/th?id=OIP.pDmgA1bsIubxvKMWINXJpgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"width="5px" height="5px">
-                                </button>
-                                <button class="headingButton" onclick="sortStringDsc('${fieldMember}')">
-                                    <img src="https://th.bing.com/th?id=OIP.aEEk21LpU4JhD3fMOdAEvAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" width="5px" height="5px">
-                                </button>
-                            </div>
+                ${fields.map(function (fieldMember) {
+        return `
+                            <th>
+                                <div class=headButton>
+                                    ${fieldMember}
+                                    <div>
+                                        <button class="headingButton" id="Ascending" onclick="sortStringAsc('${fieldMember}')">
+                                            <img src="https://th.bing.com/th?id=OIP.pDmgA1bsIubxvKMWINXJpgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" width="5px" height="5px">
+                                        </button>
+                                        <button class="headingButton" id="Descending" onclick="sortStringDsc('${fieldMember}')">
+                                            <img src="https://th.bing.com/th?id=OIP.aEEk21LpU4JhD3fMOdAEvAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" width="5px" height="5px">
+                                        </button>
+                                    </div>
+                                </div>
                             </th>
                         `
-                    }).join('')
-                }
+    }).join('')
+        }
                 <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            ${
-                data.map(function(dataMember,index){
-                    if(index<rowNumber){
-                        return `
-                            <tr class="editing">
+            </tr>`
+        document.querySelector('thead').innerHTML = tpl;
+}
+
+/*This  function is for table body render*/
+function tableBodyRender(dataProvided) {
+    var tpl= `
+            ${dataProvided.map(function (dataMember, index) {
+            if (index < rowNumber) {
+                return `
+                            <tr class="editing" data-index="${index}">
                                 <td>${dataMember.name}</td>
                                 <td>${dataMember.role}</td>
                                 <td>${dataMember.type}</td>
                                 <td>${dataMember.HitPoint}</td>
                                 <td>${dataMember.PhysicalAttack}</td>
                                 <td>${dataMember.Mana}</td>
-                                <td contenteditable="false"><button class="editActionButton">Edit</button> <button class="deleteActionButton">Delete</button></td>
+                                <td contenteditable="false">
+                                    <button class="editActionButton">Edit</button>
+                                    <button class="deleteActionButton">Delete</button>
+                                </td>
                             </tr>
                     `
-                    }
-                }).join('')
             }
-        </tbody>
+        }).join('')}`
+        document.querySelector('tbody').innerHTML = tpl;
+}
+
+/*functon for dynamic data entries tag */
+function tagDynamic(pageNumber,rowNumber) {
+    if (lengthData < (pageNumber * rowNumber)) {
+        var tpl= `
+        <h3>Showing ${(pageNumber - 1) * rowNumber + 1}-${lengthData} of ${lengthData} entries.</h3>
         `
-}
-document.querySelector('table').innerHTML=tableRender(data,fields);
-
-
-/*When the page loads for first time this function makes buttons of pages for default number of rows that is 10*/
-function dynamicButtons(rowNumber){
-    var buttonNumber=lengthData/rowNumber;
-    if((lengthData%rowNumber)!=0){
-        buttonNumber+=1;
     }
-    var CodeButtons="";
-    for(var i=1;i<=buttonNumber;i++){
-        CodeButtons+=`<button class="pagingButton">${i}</button>`
+    else {
+        var tpl= `
+        <h3>Showing ${(pageNumber - 1) * rowNumber + 1}-${pageNumber * rowNumber} of ${lengthData} entries.</h3>
+        `
     }
-    return CodeButtons;
+    document.querySelector(".tagDynamic").innerHTML = tpl;
 }
-document.querySelector('.pageIcons').innerHTML=dynamicButtons(rowNumber);
+
+/*this function makes buttons*//*done */
+function dynamicButtons(rowNumber) {
+    var buttonNumber = lengthData / rowNumber;
+    if ((lengthData % rowNumber) != 0) {
+        buttonNumber += 1;
+    }
+    var CodeButtons = `<button class="pagingButton"><<</button>
+    <button class="pagingButton"><</button>`;
+    for (var i = 1; i <= buttonNumber; i++) {
+        CodeButtons += `<button class="pagingButton">${i}</button>`
+    }
+    CodeButtons += `<button class="pagingButton">></button>
+    <button class="pagingButton">>></button>`;
+    
+    document.querySelector('.pageIcons').innerHTML = CodeButtons;
+}
 
 /*This event is when we click on page number it will change the page*/
-function pagingButton(event){
-    console.log('paging button event');
-    var pageNumber=event.target.textContent;
-    console.log(pageNumber);
-    newestData=data.slice((pageNumber-1)*rowNumber,pageNumber*rowNumber);
+function pagingButton(event) {
+    document.querySelectorAll(".pagingButton").forEach(function (buttonPage) {
+        buttonPage.style.boxShadow = "";
+        buttonPage.style.backgroundColor = "";
+    });
+    var buttonText = event.target.textContent;
+    if (buttonText == `<<`) {
+        pageNumber = 1;
+    }
+    else if (buttonText == `>>`) {
+        buttonNumber = Math.ceil(lengthData / rowNumber);
+        pageNumber = buttonNumber;
+    }
+    else if (buttonText == `<`) {
+        if (pageNumber > 1) {
+            pageNumber--;
+        }
+    }
+    else if (buttonText == `>`) {
+        buttonNumber = Math.ceil(lengthData / rowNumber);
+        if (pageNumber < buttonNumber) {
+            pageNumber++;
+        }
+    }
+    else {
+        pageNumber = buttonText;
+    }
+    newestData = data.slice((pageNumber - 1) * rowNumber, pageNumber * rowNumber);
 
-    var tableData=document.querySelector('table');
-    tableData.innerHTML=tableRender(newestData,fields);
+    tableBodyRender(newestData);
+    tagDynamic(pageNumber, rowNumber);
+    document.querySelectorAll(".editActionButton").forEach(function (editable) {
+        editable.addEventListener("click", isEditing);
+    })
+
+    document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+        deleteable.addEventListener("click", modalFunction);
+    })
+    //to complete
+    //style.backgroundColor="lightgray";
 }
 
 /*functions for sorting two functions 1 for ascending and 1 for descending*/
-function sortStringAsc(param){
-    console.log(param);
-    if(param=="Name"){
-        sortedData=data.sort(function(a,b){
+function sortStringAsc(param) {
+    if (param == "Name") {
+        sortedData = data.sort(function (a, b) {
             return a.name.localeCompare(b.name);
         })
     }
-    else if(param=="Role"){
-        sortedData=data.sort(function(a,b){
+    else if (param == "Role") {
+        sortedData = data.sort(function (a, b) {
             return a.role.localeCompare(b.role);
         })
     }
-    else if(param=="Type"){
-        sortedData=data.sort(function(a,b){
+    else if (param == "Type") {
+        sortedData = data.sort(function (a, b) {
             return a.type.localeCompare(b.type);
         })
     }
-    else if(param=="Hitpoints"){
-        sortedData=data.sort(function(a,b){
-            return a.HitPoint-b.HitPoint;
-        });   
+    else if (param == "Hitpoints") {
+        sortedData = data.sort(function (a, b) {
+            return a.HitPoint - b.HitPoint;
+        });
     }
-    else if(param=="Physical Attack"){
-        sortedData=data.sort(function(a,b){
-            return a.PhysicalAttack-b.PhysicalAttack;
-        });   
+    else if (param == "Physical Attack") {
+        sortedData = data.sort(function (a, b) {
+            return a.PhysicalAttack - b.PhysicalAttack;
+        });
     }
-    else if(param=="Mana"){
-        sortedData=data.sort(function(a,b){
-            return a.Mana-b.Mana;
-        });   
+    else if (param == "Mana") {
+        sortedData = data.sort(function (a, b) {
+            return a.Mana - b.Mana;
+        });
     }
-    document.querySelector('table').innerHTML=tableRender(sortedData,fields);
-    document.querySelectorAll(".editActionButton").forEach(function(editable){
-        editable.addEventListener("click",isEditing);
+    tableBodyRender(sortedData);
+    tagDynamic(pageNumber, rowNumber);
+    document.querySelectorAll(".editActionButton").forEach(function (editable) {
+        editable.addEventListener("click", isEditing);
     })
-    
-    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
-        deleteable.addEventListener("click",deleteRow);
+
+    document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+        deleteable.addEventListener("click", modalFunction);
     })
 }
-function sortStringDsc(param){
-    console.log(param);
-    if(param=="Name"){
-        sortedData=data.sort(function(a,b){
+function sortStringDsc(param) {
+    if (param == "Name") {
+        sortedData = data.sort(function (a, b) {
             return b.name.localeCompare(a.name);
         })
     }
-    else if(param=="Role"){
-        sortedData=data.sort(function(a,b){
+    else if (param == "Role") {
+        sortedData = data.sort(function (a, b) {
             return b.role.localeCompare(a.role);
         })
     }
-    else if(param=="Type"){
-        sortedData=data.sort(function(a,b){
+    else if (param == "Type") {
+        sortedData = data.sort(function (a, b) {
             return b.type.localeCompare(a.type);
         })
     }
-    else if(param=="Hitpoints"){
-        sortedData=data.sort(function(a,b){
-            return b.HitPoint-a.HitPoint;
-        });   
+    else if (param == "Hitpoints") {
+        sortedData = data.sort(function (a, b) {
+            return b.HitPoint - a.HitPoint;
+        });
     }
-    else if(param=="Physical Attack"){
-        sortedData=data.sort(function(a,b){
-            return b.PhysicalAttack-a.PhysicalAttack;
-        });   
+    else if (param == "Physical Attack") {
+        sortedData = data.sort(function (a, b) {
+            return b.PhysicalAttack - a.PhysicalAttack;
+        });
     }
-    else if(param=="Mana"){
-        sortedData=data.sort(function(a,b){
-            return b.Mana-a.Mana;
-        });   
+    else if (param == "Mana") {
+        sortedData = data.sort(function (a, b) {
+            return b.Mana - a.Mana;
+        });
     }
-    document.querySelector('table').innerHTML=tableRender(sortedData,fields);
-    document.querySelectorAll(".editActionButton").forEach(function(editable){
-        editable.addEventListener("click",isEditing);
+    tableBodyRender(sortedData);
+    tagDynamic(pageNumber, rowNumber);
+    document.querySelectorAll(".editActionButton").forEach(function (editable) {
+        editable.addEventListener("click", isEditing);
     })
-    
-    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
-        deleteable.addEventListener("click",deleteRow);
+
+    document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+        deleteable.addEventListener("click", modalFunction);
     })
 }
 
-/*function for saving a row */
-/* function editNewRow(event){
-    var currentRow=event.target.closest('tr');
-    var newObj={};
-    currentRow.querySelectorAll('td').forEach(function(eachCell,index){
-        if(index<fields.length){
-            if(eachCell.textContent.length==0){
-                alert("Row must not be empty");
-                return;
-            }
-            newObj[fields[index]]=eachCell.textContent;
-        }
-        console.log(eachCell.textContent);
-    })
-    document.querySelector(".editActionButton").textContent="Edit";
-    data.push(newObj);
-} */
-
 /*function for adding row*/
-/* function addingRow(){
-    var newRow = document.createElement("tr");
-    fields.forEach(function(field){
-        var newCell = document.createElement("td");
-        newCell.setAttribute("contenteditable","true");
-        newRow.appendChild(newCell);
-    });
-    var actionCell = document.createElement("td");
-    actionCell.innerHTML = `
-    <button class="editActionButton">Save</button>
-    <button class="deleteActionButton" onclick="deleteButton()">Delete</button>
-    `;
-    console.log(newRow);
-    newRow.appendChild(actionCell);
-    document.querySelector("table tbody").appendChild(newRow);
-    document.querySelector(".editActionButton").addEventListener("click",editNewRow);
-} */
-function addingRow(){
-    var newObject={
-        name:"",
-        role:"",
-        type:"",
+function addingRow() {
+    var newObject = {
+        name: "New Name",
+        role: "New Role",
+        type: "New Type",
         HitPoint: 0,
         PhysicalAttack: 0,
         Mana: 0
     }
     data.unshift(newObject);
-    document.querySelector('table').innerHTML=tableRender(data,fields);
-    document.querySelectorAll(".editActionButton").forEach(function(editable){
-        editable.addEventListener("click",isEditing);
+    tableBodyRender(data, fields);
+    tagDynamic(pageNumber, rowNumber);
+    document.querySelectorAll(".editActionButton").forEach(function (editable) {
+        editable.addEventListener("click", isEditing);
     })
-    
-    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
-        deleteable.addEventListener("click",deleteRow);
+
+    document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+        deleteable.addEventListener("click", modalFunction);
     })
 }
 
 /*function for editing row*/
-function isEditing(event){
-    var oldRow=event.target.closest('tr');
-    if(oldRow.querySelector(".editActionButton").textContent=="Edit"){
-        var oldCells=oldRow.querySelectorAll("td");
-        oldCells.forEach(function(cell,index){
-            if(index<6){
-                cell.setAttribute("contenteditable","true");
+function isEditing(event) {
+    var oldRow = event.target.closest('tr');
+    var rowIndex = oldRow.getAttribute("data-index");
+    if (oldRow.querySelector(".editActionButton").textContent == "Edit") {
+        var oldCells = oldRow.querySelectorAll("td");
+        oldCells.forEach(function (cell, index) {
+            if (index < 6) {
+                cell.setAttribute("contenteditable", "true");
             }
         })
-        oldRow.querySelector(".editActionButton").textContent="Save";
+        oldRow.querySelector(".editActionButton").textContent = "Save";
     }
-    else if(oldRow.querySelector(".editActionButton").textContent=="Save"){
-        var oldCells=oldRow.querySelectorAll("td");
-        var name=oldRow.querySelector('td:first-of-type').textContent;
-        var rowIndex=data.findIndex(function(indexing){
-            return indexing.name==name;
-        })
-        var editedRow={
-            name:oldCells[0].textContent,
-            role:oldCells[1].textContent,
-            type:oldCells[2].textContent,
-            HitPoint:oldCells[3].textContent,
-            PhysicalAttack:oldCells[4].textContent,
-            Mana:oldCells[5].textContent
+    else if (oldRow.querySelector(".editActionButton").textContent == "Save") {
+        var oldCells = oldRow.querySelectorAll("td");
+        var editedRow = {
+            name: oldCells[0].textContent,
+            role: oldCells[1].textContent,
+            type: oldCells[2].textContent,
+            HitPoint: oldCells[3].textContent,
+            PhysicalAttack: oldCells[4].textContent,
+            Mana: oldCells[5].textContent
         };
-        data[rowIndex]=editedRow;
-        oldCells.forEach(function(cell,index){
-            if(index<6){
-                cell.setAttribute("contenteditable","false");
+        data[rowIndex] = editedRow;
+        lengthData = data.length;
+        oldCells.forEach(function (cell, index) {
+            if (index < 6) {
+                cell.setAttribute("contenteditable", "false");
             }
         })
-        oldRow.querySelector(".editActionButton").textContent="Edit";
-        document.querySelector('table').innerHTML=tableRender(data,fields);
-
-        document.querySelectorAll(".editActionButton").forEach(function(editable){
-            editable.addEventListener("click",isEditing);
+        oldRow.querySelector(".editActionButton").textContent = "Edit";
+        tableBodyRender(data);
+        tagDynamic(pageNumber, rowNumber);
+        document.querySelectorAll(".editActionButton").forEach(function (editable) {
+            editable.addEventListener("click", isEditing);
         })
-        
-        document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
-            deleteable.addEventListener("click",deleteRow);
+        document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+            deleteable.addEventListener("click", modalFunction);
         })
     }
-   
-    /* document.querySelector(".editing").setAttribute("contenteditable", "true"); */
+    // document.querySelector(".editing").setAttribute("contenteditable", "true");
 }
 
+/*modal*/
+function modalFunction(event){
+    var oldRow = event.target.closest('tr');
+    var rowIndex = oldRow.getAttribute("data-index");
+    document.querySelector(".modal-overlay").classList.add("show");
+    var tpl=`
+    <div class="deletionModal">
+        <form>
+            <h2>Are you sure you want to delete this row?</h2>
+            <div>
+                <p>Name: ${data[rowIndex].name}</p>
+                <p>Role: ${data[rowIndex].role}</p>
+                <p>Type: ${data[rowIndex].type}</p>
+                <p>Hitpoints: ${data[rowIndex].HitPoint}</p>
+                <p>Physical Attack: ${data[rowIndex].PhysicalAttack}</p>
+                <p>Mana: ${data[rowIndex].Mana}</p>
+            </div>
+            <h3>Deleted data can not be restored in anyway.</h3>
+            <label for="deleteInput">Type "Delete" to delete the row</label>
+            <input id="deleteInput" type="text">
+            <h4 class="additionalText"></h4>
+        </form>
+        <button class="cancelButton">Cancel</button>
+    </div>
+    `;
+    document.querySelector(".modal-overlay").innerHTML=tpl;
+    document.querySelector(".cancelButton").addEventListener('click', () => {
+        document.querySelector(".modal-overlay").classList.remove('show');
+    });
+    document.querySelector("#deleteInput").addEventListener("keydown",function(event){
+        if(event.key==="Enter"){
+            event.preventDefault();
+            var textInput=document.querySelector("#deleteInput").value;
+            if(textInput==="Delete"){
+                deleteRow(event,rowIndex);
+                document.querySelector(".modal-overlay").classList.remove('show');
+            }
+            else{
+                document.querySelector(".additionalText").textContent=`Please type "Delete" and then press enter key to delete the row.`;
+            }
+            document.querySelector("#deleteInput").value="";
+        }
+    })
+}
 /*function for deleting row*/
-function deleteRow(event){
-    var oldRow=event.target.closest('tr');
-    var name=oldRow.querySelector('td:first-of-type').textContent;
-    var rowIndex=data.findIndex(function(indexing){
-        return indexing.name==name;
+function deleteRow(event,rowIndex) {
+    data.splice(rowIndex, 1);
+    lengthData = data.length;
+    tableBodyRender(data);
+    tagDynamic(pageNumber, rowNumber);
+    document.querySelectorAll(".editActionButton").forEach(function (editable) {
+        editable.addEventListener("click", isEditing);
     })
-    data.splice(rowIndex,1);
-    document.querySelector('table').innerHTML=tableRender(data,fields);
-    document.querySelectorAll(".editActionButton").forEach(function(editable){
-        editable.addEventListener("click",isEditing);
-    })
-    
-    document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
-        deleteable.addEventListener("click",deleteRow);
+    document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+        deleteable.addEventListener("click", modalFunction);
     })
 }
 
-/*Adding events to buttons and input according to id*/
-document.getElementById("searchInput").addEventListener("input", handleInput);
-
-document.getElementById("dropdown").addEventListener("click", handleClick);
-
-document.querySelectorAll(".pagingButton").forEach(function(buttonPage){
-    buttonPage.addEventListener("click",pagingButton);
-})
-
-document.querySelector(".addButton").addEventListener("click",addingRow);
-
-/*Whenever the table is rendered these two functions must be called to attach these two events to the new edit and delete buttons */
-document.querySelectorAll(".editActionButton").forEach(function(editable){
-    editable.addEventListener("click",isEditing);
-})
-
-document.querySelectorAll(".deleteActionButton").forEach(function(deleteable){
-    deleteable.addEventListener("click",deleteRow);
-})
-/*
-function createDropdown() {
-  const values = [5, 10, 15];
-  const dropdownHTML = `<select id="dropdown">${values.map(value => `<option value="${value}">${value}</option>`).join('')}</select>`;
-  document.body.innerHTML = dropdownHTML;
-
-  const select = document.getElementById('dropdown');
-  select.addEventListener('change', function(event) {
-    const selectedValue = event.target.value;
-    console.log('Selected value:', selectedValue);
-  });
+function renderPage(){
+    createDropdown(values);
+    tableHeaderRender(fields);
+    tableBodyRender(data);
+    tagDynamic(pageNumber, rowNumber);
+    dynamicButtons(rowNumber);
 }
 
-createDropdown();
-*/
+function attachEvents(){
+    /*Adding events to buttons and input according to id*/
+    document.getElementById("searchInput").addEventListener("input", handleInput);
+    document.getElementById("dropdown").addEventListener("click", handleClick);
+    document.querySelectorAll(".pagingButton").forEach(function (buttonPage) {
+        buttonPage.addEventListener("click", pagingButton);
+    })
+    document.querySelector(".addButton").addEventListener("click", addingRow);
+    /*Whenever the table is rendered these two functions must be called to attach these two events to the new edit and delete buttons */
+    document.querySelectorAll(".editActionButton").forEach(function (editable) {
+        editable.addEventListener("click", isEditing);
+    })
+    document.querySelectorAll(".deleteActionButton").forEach(function (deleteable) {
+        deleteable.addEventListener("click", modalFunction);
+    })
+    document.querySelector(".modal-overlay").addEventListener('click', function(event){
+        var modalOverlay=document.querySelector(".modal-overlay");
+        if (event.target === modalOverlay) {
+            document.querySelector(".modal-overlay").classList.remove('show');
+        }
+    })
+    /* document.querySelectorAll("#Ascending").forEach(function(button){
+        button.addEventListener("click",sortStringAsc('${fieldMember}'))
+    })
+    document.querySelectorAll("#Descending").forEach(function(button){
+        button.addEventListener("click",sortStringDsc('${fieldMember}'))
+    }) */
+}
+
+renderPage();
+attachEvents();

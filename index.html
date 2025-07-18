@@ -4,48 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css -->
     <title>Dynamic Table</title>
 </head>
 <body>
-     <main>
-        <div class="header">
-            <div>
-                <h3>Let's Grow Together</h3>
-            </div>
-            <div>
+    <main>
+    <div class="header">
+        <div>
+            <h3>Let's Grow Together</h3>
+        </div>
+        <div>
 
-                <h3>Messages</h3>
-                <h3>Contacts</h3>
-                <h3>Automation</h3>
-                <h3>Media Library</h3>
-            </div>
-            <div>
-                <h3>Author: Yash</h3>
+            <h3>Messages</h3>
+            <h3>Contacts</h3>
+            <h3>Automation</h3>
+            <h3>Media Library</h3>
+        </div>
+        <div>
+            <h3>Author: Yash</h3>
+        </div>
+    </div>
+    <div class="hero">
+        <div>
+            <h1>Heroes</h1>
+            <div class="optionDivs">
+                <button class="addButton">Add</button>
+                <div></div>
+                <div></div>
+                <!-- Instead of filter button we can have a field that selects which row we want to filter -->
+                <input type="text" placeholder="Search" id="searchInput">
             </div>
         </div>
-        <div class="hero">
-            <div>
-                <h1>Contacts</h1>
-                <div class="optionDivs">
-                    <button class="addButton">Add</button>
-                    <div>Upload</div>
-                    <div>Filter</div>
-                    <!-- Instead of filter button we can have a field that selects which row we want to filter -->
-                    <input type="text" placeholder="Search" id="searchInput">
-                </div>
-            </div>
-            <div id="dropHere">
-                
-            </div>
-        </div>
-        <table>
+        <div id="dropHere">
             
-        </table>
+        </div>
+    </div>
+    <table>
+        <thead>
+
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div class="tableBottom">
+        <div class="tagDynamic">
+
+        </div>
         <div class="pageIcons">
-            
+        
         </div>
-     </main>
-    <script src="./index.js"></script>
+    </div>
+    </main>
+    <div class="modal-overlay">
+        
+    </div>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
